@@ -6,4 +6,47 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
+    <Button
+        android:id="@+id/btnAbout"
+        android:layout_width="320dp"
+        android:layout_height="57dp"
+        android:text="@string/about"
+        android:textColor="@color/textColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.95"
+        android:background="@drawable/custom_button"/>
+
+    <Button
+        android:id="@+id/btnReminderList"
+        android:layout_width="320dp"
+        android:layout_height="57dp"
+        android:background="@drawable/custom_button"
+        android:text="@string/reminders"
+        android:textColor="@color/textColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.706" />
+
+    <Button
+        android:id="@+id/btnSettings"
+        android:layout_width="320dp"
+        android:layout_height="57dp"
+        android:background="@drawable/custom_button"
+        android:text="@string/settings"
+        android:textColor="@color/textColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.826" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

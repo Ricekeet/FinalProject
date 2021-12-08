@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/School/CPA 3-1/MobileApps/FinalProject/app/src/main/res/drawable/custom_button.xml" value="0.29322916666666665" />
         <entry key="..\:/School/CPA 3-1/MobileApps/FinalProject/app/src/main/res/drawable/ic_launcher_background.xml" value="0.37864583333333335" />
+        <entry key="..\:/School/CPA 3-1/MobileApps/FinalProject/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/School/CPA 3-1/MobileApps/FinalProject/app/src/main/res/menu/nav_header_menu.xml" value="0.2630208333333333" />
       </map>
     </option>
   </component>
