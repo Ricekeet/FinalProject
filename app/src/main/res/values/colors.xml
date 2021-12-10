@@ -3,12 +3,12 @@
     <color name="primaryColor">#f1b9eb</color>
     <color name="secondaryColor">#bff2c4</color>
     <color name="buttonColor">#BF6FB6</color>
-    <color name="textColor">#5E35B1</color>
-    <color name="backgroundColor">#FFFFFF</color>
+    <color name="textColor">#1B1B1B</color>
+    <color name="backgroundColor">#B480D3</color>
 
     <color name="statusBar">#272727</color>
 
-    <color name="D_primaryColor">#AC7BA6</color>
+    <color name="D_primaryColor">#C35AB6</color>
     <color name="D_secondaryColor">#84B689</color>
     <color name="D_buttonColor">#C379BB</color>
     <color name="D_textColor">#FFF0F0</color>

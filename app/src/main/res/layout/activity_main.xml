@@ -11,15 +11,14 @@
         android:id="@+id/btnAbout"
         android:layout_width="320dp"
         android:layout_height="57dp"
+        android:background="@drawable/custom_button"
         android:text="@string/about"
-        android:textColor="@color/textColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.95"
-        android:background="@drawable/custom_button"/>
+        app:layout_constraintVertical_bias="0.95" />
 
     <Button
         android:id="@+id/btnReminderList"
@@ -27,13 +26,25 @@
         android:layout_height="57dp"
         android:background="@drawable/custom_button"
         android:text="@string/reminders"
-        android:textColor="@color/textColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.706" />
+        app:layout_constraintVertical_bias="0.58" />
+
+    <Button
+        android:id="@+id/btnWidgets"
+        android:layout_width="320dp"
+        android:layout_height="57dp"
+        android:background="@drawable/custom_button"
+        android:text="@string/widgets"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.703" />
 
     <Button
         android:id="@+id/btnSettings"
@@ -41,12 +52,25 @@
         android:layout_height="57dp"
         android:background="@drawable/custom_button"
         android:text="@string/settings"
-        android:textColor="@color/textColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.826" />
+
+    <ImageView
+        android:id="@+id/picMainLogo"
+        android:layout_width="323dp"
+        android:layout_height="305dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="7dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnReminderList"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.477"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_launcher_foreground"
+        android:contentDescription="@string/main_menu_logo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
