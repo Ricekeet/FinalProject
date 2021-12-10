@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/secondary">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="20dp"
+    android:layout_margin="5dp"
+    app:cardBackgroundColor="@color/pinkLight"
+    android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    >
 
     <TextView
         android:id="@+id/lblReminderName"
-        android:layout_width="380dp"
-        android:layout_height="27dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
         android:text="Reminder"
-        android:textColor="@color/textColor"
+        android:textColor="@color/cellText"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.483"
@@ -20,12 +26,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:textColor="@color/textColor"
+        android:textColor="@color/cellText"
         android:id="@+id/lblDateSet"
         android:layout_width="180dp"
-        android:layout_height="27dp"
+        android:layout_height="35dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="35dp"
         android:gravity="center"
         android:text="Set at: mm/dd/yyyy"
         android:textSize="16sp"
@@ -33,18 +39,19 @@
         app:layout_constraintTop_toBottomOf="@+id/lblReminderName" />
 
     <TextView
-        android:textColor="@color/textColor"
         android:id="@+id/lblTimeLeft"
         android:layout_width="126dp"
-        android:layout_height="27dp"
-        android:layout_marginTop="4dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="265dp"
+        android:layout_marginTop="35dp"
         android:layout_marginEnd="16dp"
         android:gravity="center"
         android:text="00:00:00:00"
+        android:textColor="@color/cellText"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/lblDateSet"
         app:layout_constraintTop_toBottomOf="@+id/lblReminderName" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

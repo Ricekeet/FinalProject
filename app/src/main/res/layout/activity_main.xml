@@ -11,7 +11,7 @@
         android:id="@+id/btnReminderList"
         android:layout_width="320dp"
         android:layout_height="57dp"
-        android:layout_marginTop="336dp"
+        android:layout_marginTop="256dp"
         android:background="@drawable/button"
         android:fontFamily="@font/regular"
         android:text="@string/reminders"
@@ -19,9 +19,9 @@
         android:textAllCaps="false"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/btnWidgets"
@@ -77,15 +77,13 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_marginTop="36dp"
         android:fontFamily="@font/bold"
         android:text="@string/lblHomeHeader"
-        android:textColor="@color/white"
+        android:textColor="@color/headerColor"
         android:textSize="40sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnReminderList"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.129" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

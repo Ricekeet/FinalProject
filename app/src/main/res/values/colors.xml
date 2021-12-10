@@ -1,25 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary">#f1b9eb</color>
-    <color name="primaryVariant">#d35cc9</color>
-    <color name="buttonColor">#d35cc9</color>
-    <color name="secondary">#b9f1bf</color>
-    <color name="secondaryVariant">#86e58f</color>
-    <color name="secondaryButtonColor">#86e58f</color>
-    <color name="textColor">#4A4A4A</color>
-    <color name="btnTextColor">#FFFEFE</color>
-    <color name="backgroundColor">#FFDCFF</color>
-
-    <color name="D_primary">#f1b9eb</color>
-    <color name="D_primaryVariant">#d35cc9</color>
-    <color name="D_buttonColor">#d35cc9</color>
-    <color name="D_secondary">#b9f1bf</color>
-    <color name="D_secondaryVariant">#86e58f</color>
-    <color name="D_secondaryButtonColor">#86e58f</color>
-    <color name="D_textColor">#AFAFAF</color>
-    <color name="D_btnTextColor">#FFFEFE</color>
-    <color name="D_backgroundColor">#202020</color>
-
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="pink">#f385f3</color>
+    <color name="pinkLight">#ffb7ff</color>
+    <color name="pinkDark">#be54c0</color>
+    <color name="text">#FFFFFF</color>
+    <color name="textDark">#AFAFAF</color>
+    <color name="textOnPink">#FFFEFE</color>
+    <color name="cellText">#515151</color>
+    <color name="headerColor">#FFFFFF</color>
 </resources>
