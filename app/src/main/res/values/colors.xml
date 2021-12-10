@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primaryColor">#f1b9eb</color>
-    <color name="secondaryColor">#bff2c4</color>
-    <color name="buttonColor">#BF6FB6</color>
-    <color name="textColor">#1B1B1B</color>
-    <color name="backgroundColor">#B480D3</color>
+    <color name="primary">#f1b9eb</color>
+    <color name="primaryVariant">#d35cc9</color>
+    <color name="buttonColor">#d35cc9</color>
+    <color name="secondary">#b9f1bf</color>
+    <color name="secondaryVariant">#86e58f</color>
+    <color name="secondaryButtonColor">#86e58f</color>
+    <color name="textColor">#4A4A4A</color>
+    <color name="btnTextColor">#FFFEFE</color>
+    <color name="backgroundColor">#FFDCFF</color>
 
-    <color name="statusBar">#272727</color>
-
-    <color name="D_primaryColor">#C35AB6</color>
-    <color name="D_secondaryColor">#84B689</color>
-    <color name="D_buttonColor">#C379BB</color>
-    <color name="D_textColor">#FFF0F0</color>
-    <color name="D_backgroundColor">#252525</color>
+    <color name="D_primary">#f1b9eb</color>
+    <color name="D_primaryVariant">#d35cc9</color>
+    <color name="D_buttonColor">#d35cc9</color>
+    <color name="D_secondary">#b9f1bf</color>
+    <color name="D_secondaryVariant">#86e58f</color>
+    <color name="D_secondaryButtonColor">#86e58f</color>
+    <color name="D_textColor">#AFAFAF</color>
+    <color name="D_btnTextColor">#FFFEFE</color>
+    <color name="D_backgroundColor">#202020</color>
 
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>

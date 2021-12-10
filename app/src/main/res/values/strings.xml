@@ -5,4 +5,8 @@
     <string name="settings">Settings</string>
     <string name="widgets">Widgets</string>
     <string name="main_menu_logo">Main Menu Logo</string>
+    <string name="lblSettingsHeader">Settings</string>
+    <string name="lblPushNotifications">Push Notifications</string>
+    <string name="lblDarkMode">Dark Mode</string>
+    <string name="lblHomeHeader">Simple Reminders</string>
 </resources>
