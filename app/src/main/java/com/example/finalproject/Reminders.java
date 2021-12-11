@@ -32,6 +32,7 @@ public class Reminders extends AppCompatActivity {
         switch(view.getId()){
             case(R.id.btnRemindersBack):{
                 startActivity(new Intent(this,MainActivity.class));
+                break;
             }
             case(R.id.btnRemindersAdd):{
                 startActivity(new Intent(this, AddReminder.class));
