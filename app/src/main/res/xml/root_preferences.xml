@@ -1,0 +1,15 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory
+        android:title="@string/settings_general_header">
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="swPushNotifications"
+            android:title="Push Notifications"/>
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="swDarkMode"
+            android:title="Dark Mode" />
+    </PreferenceCategory>
+</PreferenceScreen>

@@ -9,4 +9,8 @@
     <string name="lblPushNotifications">Push Notifications</string>
     <string name="lblDarkMode">Dark Mode</string>
     <string name="lblHomeHeader">Simple Reminders</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Preference Titles -->
+    <string name="settings_general_header">General</string>
 </resources>
