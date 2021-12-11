@@ -13,4 +13,5 @@
 
     <!-- Preference Titles -->
     <string name="settings_general_header">General</string>
+    <string name="btnSaveSettings">Save</string>
 </resources>

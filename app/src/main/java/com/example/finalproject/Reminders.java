@@ -1,6 +1,7 @@
 package com.example.finalproject;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +11,14 @@ public class Reminders extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // toggles Night Mode for application
+        if (globals.isDarkModeEnabled() == true){
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        }
+        else{
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reminders);
     }
