@@ -12,7 +12,7 @@ public class Reminders extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // toggles Night Mode for application
-        if (globals.isDarkModeEnabled() == true){
+        if (globals.isDarkModeEnabled()){
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         }
         else{

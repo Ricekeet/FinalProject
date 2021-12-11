@@ -17,7 +17,7 @@ public class Settings extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // toggles Night Mode for application
-        if (globals.isDarkModeEnabled() == true){
+        if (globals.isDarkModeEnabled()){
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         }
         else{
@@ -62,15 +62,10 @@ public class Settings extends AppCompatActivity {
 
         public void ToggleDarkMode(){
             boolean darkMode = globals.isDarkModeEnabled();
-            if (darkMode == true) {
-                globals.setDarkModeEnabled(false);
-            }
-            else {
-                globals.setDarkModeEnabled(true);
-            }
+            globals.setDarkModeEnabled(darkMode != true);
 
             // toggles Night Mode for application
-            if (globals.isDarkModeEnabled() == true){
+            if (globals.isDarkModeEnabled()){
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
             }
             else{
