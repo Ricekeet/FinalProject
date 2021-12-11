@@ -14,4 +14,15 @@
     <!-- Preference Titles -->
     <string name="settings_general_header">General</string>
     <string name="btnSaveSettings">Save</string>
+    <string name="lblAboutText">Simple Reminders was developed by 3 undergrad students from
+    Conestoga College for their Final Project.</string>
+    <string name="lblCopyright">This app is free to use and is not copyrighted</string>
+    <string name="lblAddReminderHeader">Add a Reminder</string>
+    <string name="lblAboutHeader">About</string>
+    <string name="lblRemindersHeader">Reminders</string>
+    <string name="btnSaveReminder">Save</string>
+    <string name="lblDescription">Description:</string>
+    <string name="back_button">Back Button</string>
+    <string name="add_button">Add Button</string>
+    <string name="container_content_description">The container image</string>
 </resources>

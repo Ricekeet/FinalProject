@@ -17,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
         sp = PreferenceManager.getDefaultSharedPreferences(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //set global variables on startup
         globals.setDarkModeEnabled(sp.getBoolean("swDarkMode",false));
         globals.setPushNotifications(sp.getBoolean("swPushNotifications",false));
 
@@ -29,7 +31,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
+    /**
+     * Button handler for buttons that switch between Activities
+     * @param view The button that is being clicked on
+     */
     public void btnHandler(View view) {
         switch (view.getId()){
             case(R.id.btnReminderList):{
@@ -41,9 +46,11 @@ public class MainActivity extends AppCompatActivity {
                 break;
             }
             case(R.id.btnAbout):{
+                startActivity(new Intent(this, About.class));
                 break;
             }
             case(R.id.btnWidgets):{
+                //TODO: Should we keep or not?
                 break;
             }
         }

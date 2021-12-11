@@ -8,12 +8,12 @@
     tools:context=".Reminders">
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/lblRemindersHeader"
         android:textColor="@color/headerColor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:text="Reminders"
+        android:text="@string/lblRemindersHeader"
         android:fontFamily="@font/bold"
         android:textSize="35sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,7 +23,7 @@
     <ImageButton
         android:foreground="?android:attr/selectableItemBackground"
         android:onClick="btnHandler"
-        android:contentDescription="Back Button"
+        android:contentDescription="@string/back_button"
         android:id="@+id/btnRemindersBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -41,14 +41,15 @@
         android:layout_height="457dp"
         app:layout_constraintBottom_toTopOf="@+id/btnRemindersBack"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.565" />
+        app:layout_constraintTop_toBottomOf="@+id/lblRemindersHeader"
+        app:layout_constraintVertical_bias="0.712" />
 
     <ImageButton
         android:foreground="?android:attr/selectableItemBackground"
         android:onClick="btnHandler"
-        android:contentDescription="Add Button"
+        android:contentDescription="@string/add_button"
         android:id="@+id/btnRemindersAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
