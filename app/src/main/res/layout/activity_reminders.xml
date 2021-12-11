@@ -19,6 +19,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
+        android:foreground="?android:attr/selectableItemBackground"
+        android:onClick="btnHandler"
         android:contentDescription="Back Button"
         android:id="@+id/btnRemindersBack"
         android:layout_width="wrap_content"
@@ -42,6 +44,8 @@
         app:layout_constraintVertical_bias="0.565" />
 
     <ImageButton
+        android:foreground="?android:attr/selectableItemBackground"
+        android:onClick="btnHandler"
         android:contentDescription="Add Button"
         android:id="@+id/btnRemindersAdd"
         android:layout_width="wrap_content"
@@ -55,6 +59,6 @@
         app:layout_constraintTop_toBottomOf="@+id/listReminders"
         app:layout_constraintVertical_bias="0.37"
         app:srcCompat="@drawable/add_reminders"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="OnClick,SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,7 +8,9 @@
     tools:context=".MainActivity">
 
     <Button
+        android:foreground="?android:attr/selectableItemBackground"
         android:id="@+id/btnReminderList"
+        android:onClick="btnHandler"
         android:layout_width="320dp"
         android:layout_height="57dp"
         android:layout_marginTop="256dp"
@@ -24,6 +26,8 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
+        android:foreground="?android:attr/selectableItemBackground"
+        android:onClick="btnHandler"
         android:id="@+id/btnWidgets"
         android:layout_width="320dp"
         android:layout_height="57dp"
@@ -40,6 +44,8 @@
         app:layout_constraintTop_toBottomOf="@+id/btnReminderList" />
 
     <Button
+        android:foreground="?android:attr/selectableItemBackground"
+        android:onClick="btnHandler"
         android:id="@+id/btnSettings"
         android:layout_width="320dp"
         android:layout_height="57dp"
@@ -56,6 +62,8 @@
         app:layout_constraintTop_toBottomOf="@+id/btnWidgets" />
 
     <Button
+        android:foreground="?android:attr/selectableItemBackground"
+        android:onClick="btnHandler"
         android:id="@+id/btnAbout"
         android:layout_width="320dp"
         android:layout_height="57dp"
