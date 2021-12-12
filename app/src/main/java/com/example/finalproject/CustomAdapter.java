@@ -72,7 +72,8 @@ public class CustomAdapter  extends ArrayAdapter<ReminderModel> {
         long diffHours = diff / (60 * 60 * 1000) % 24;
         long diffDays = diff / (24 * 60 * 60 * 1000);
 
-        String timeLeft = diffDays + ":" + diffHours + ":" + diffMinutes + ":" + diffSeconds + " left";
+        String timeLeft = diffDays + ":" + diffHours + ":" + diffMinutes + ":" +
+                diffSeconds + " left";
 
         //rid.setText(Integer.toString(id));
         rName.setText(name);

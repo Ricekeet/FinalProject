@@ -43,6 +43,8 @@ public class Webview extends AppCompatActivity {
         });
 
         // load the content from the specified URL into the web view
-        myWebView.loadUrl("https://www.conestogac.on.ca/admissions/registrar-office/academic-dates");
+        myWebView.loadUrl(
+                "https://www.conestogac.on.ca/admissions/registrar-office/academic-dates"
+        );
     }
 }
