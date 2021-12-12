@@ -53,11 +53,13 @@ public class AddReminder extends AppCompatActivity {
             String reminderTimeStr = etTime.getText().toString();
             // validating if the required fields are empty or not.
             /*if (reminderNameStr.isEmpty()) {
-                Toast.makeText(getApplicationContext(), "Please enter Name", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Please enter Name",
+                Toast.LENGTH_SHORT).show();
                 return;
             }*/
 
-            ReminderModel reminder = new ReminderModel(reminderNameStr, reminderDescStr, reminderDateStr, reminderTimeStr);
+            ReminderModel reminder = new ReminderModel(reminderNameStr, reminderDescStr,
+                    reminderDateStr, reminderTimeStr);
             dbHelper.addRecord(reminder);
 
             // Notification Starts
@@ -67,7 +69,8 @@ public class AddReminder extends AppCompatActivity {
             intent.putExtra("title",etReminderName.getText());
             intent.putExtra("desc",etDescription.getText());
 
-            PendingIntent pendingIntent = PendingIntent.getBroadcast(AddReminder.this,0, intent, 0);
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(AddReminder.this,
+                    0, intent, 0);
 
             AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
 

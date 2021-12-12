@@ -21,12 +21,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_TIME = "TIME";
 
     public DatabaseHelper(@Nullable Context context) {
-        super(context, "reminder.db", null, 1);
+        super(context, "reminder.db",
+                null, 1);
     }
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        String createPlayerTable = "CREATE TABLE " + REMINDER_TABLE + " (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_NAME + " TEXT, "  + COLUMN_DESCRIPTION + " TEXT, " + COLUMN_DATE + " TEXT, " + COLUMN_TIME + " TEXT)";
+        String createPlayerTable = "CREATE TABLE " + REMINDER_TABLE + " (" + COLUMN_ID +
+                " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_NAME + " TEXT, "  +
+                COLUMN_DESCRIPTION + " TEXT, " + COLUMN_DATE + " TEXT, " + COLUMN_TIME + " TEXT)";
         sqLiteDatabase.execSQL(createPlayerTable);
     }
 
@@ -66,7 +69,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 String reminderDate = cursor.getString(3);
                 String reminderTime = cursor.getString(4);
 
-                ReminderModel reminderModel = new ReminderModel(playerID, reminderName, reminderDesc, reminderDate, reminderTime);
+                ReminderModel reminderModel = new ReminderModel(playerID, reminderName,
+                        reminderDesc, reminderDate, reminderTime);
                 viewList.add(reminderModel);
 
             }while (cursor.moveToNext());

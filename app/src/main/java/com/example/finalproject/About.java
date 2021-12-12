@@ -19,6 +19,7 @@ public class About extends AppCompatActivity {
      * @param view The button that is being clicked on
      */
     public void btnHandler(View view) {
-        startActivity(new Intent(this, MainActivity.class));
+        startActivity(new Intent(this,
+                MainActivity.class));
     }
 }
