@@ -17,7 +17,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_ID = "ID";
     public static final String COLUMN_NAME = "NAME";
     public static final String COLUMN_DESCRIPTION = "DESCRIPTION";
-    public static final String COLUMN_DATETIME = "DATETIME";
+    public static final String COLUMN_DATE = "DATE";
+    public static final String COLUMN_TIME = "TIME";
 
     public DatabaseHelper(@Nullable Context context) {
         super(context, "reminder.db", null, 1);
@@ -25,7 +26,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        String createPlayerTable = "CREATE TABLE " + REMINDER_TABLE + " (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_NAME + " TEXT, "  + COLUMN_DESCRIPTION + " TEXT, " + COLUMN_DATETIME + " TEXT)";
+        String createPlayerTable = "CREATE TABLE " + REMINDER_TABLE + " (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_NAME + " TEXT, "  + COLUMN_DESCRIPTION + " TEXT, " + COLUMN_DATE + " TEXT, " + COLUMN_TIME + " TEXT)";
         sqLiteDatabase.execSQL(createPlayerTable);
     }
 
@@ -42,7 +43,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         cv.put(COLUMN_NAME, reminderModel.getName());
         cv.put(COLUMN_DESCRIPTION, reminderModel.getDescription());
-        cv.put(COLUMN_DATETIME, reminderModel.getDate());
+        cv.put(COLUMN_DATE, reminderModel.getDate());
+        cv.put(COLUMN_TIME, reminderModel.getTime());
 
         db.insert(REMINDER_TABLE, null, cv);
         db.close();
@@ -51,7 +53,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     // Read data from Player Table
     public List<ReminderModel> viewRecords(){
         List<ReminderModel> viewList = new ArrayList<>();
-        String queryString = "SELECT * FROM " + REMINDER_TABLE + " ORDER BY " + COLUMN_DATETIME;
+        String queryString = "SELECT * FROM " + REMINDER_TABLE + " ORDER BY " + COLUMN_DATE;
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(queryString,null);
 
@@ -60,10 +62,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             do {
                 int playerID = cursor.getInt(0);
                 String reminderName = cursor.getString(1);
-                String reminderDesc = cursor.getString(1);
-                String reminderDate = cursor.getString(1);
+                String reminderDesc = cursor.getString(2);
+                String reminderDate = cursor.getString(3);
+                String reminderTime = cursor.getString(4);
 
-                ReminderModel reminderModel = new ReminderModel(playerID,reminderName,reminderDesc,reminderDate);
+                ReminderModel reminderModel = new ReminderModel(playerID, reminderName, reminderDesc, reminderDate, reminderTime);
                 viewList.add(reminderModel);
 
             }while (cursor.moveToNext());
