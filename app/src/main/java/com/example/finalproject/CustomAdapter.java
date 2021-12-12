@@ -23,9 +23,10 @@ public class CustomAdapter  extends ArrayAdapter<ReminderModel> {
     public View getView(int i, View view, ViewGroup viewGroup) {
         int id = getItem(i).getId();
         String name = getItem(i).getName();
-        String desc = getItem(i).getName();
-        String date = getItem(i).getName();
-//        int ties = getItem(i).getTies();
+        String desc = getItem(i).getDescription();
+        String date = getItem(i).getDate();
+        String time = getItem(i).getTime();
+//        int test = getItem(i).getTime();
 
         LayoutInflater inflater = LayoutInflater.from(custom_context);
         view = inflater.inflate(custom_resource, viewGroup, false);
