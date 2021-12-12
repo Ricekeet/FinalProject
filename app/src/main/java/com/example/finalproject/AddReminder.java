@@ -50,13 +50,14 @@ public class AddReminder extends AppCompatActivity {
             String reminderNameStr = etReminderName.getText().toString();
             String reminderDescStr = etDescription.getText().toString();
             String reminderDateStr = etDate.getText().toString();
+            String reminderTimeStr = etTime.getText().toString();
             // validating if the required fields are empty or not.
             /*if (reminderNameStr.isEmpty()) {
                 Toast.makeText(getApplicationContext(), "Please enter Name", Toast.LENGTH_SHORT).show();
                 return;
             }*/
 
-            ReminderModel reminder = new ReminderModel(reminderNameStr, reminderDescStr, reminderDateStr);
+            ReminderModel reminder = new ReminderModel(reminderNameStr, reminderDescStr, reminderDateStr, reminderTimeStr);
             dbHelper.addRecord(reminder);
 
             // Notification Starts

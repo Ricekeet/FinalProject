@@ -5,18 +5,21 @@ public class ReminderModel {
     private String name;
     private String description;
     private String date;
+    private String time;
 
-    public ReminderModel(String name, String description, String date) {
+    public ReminderModel(String name, String description, String date, String time) {
         this.name = name;
         this.description = description;
         this.date = date;
+        this.time = time;
     }
 
-    public ReminderModel(int id, String name, String description, String date) {
+    public ReminderModel(int id, String name, String description, String date, String time) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.date = date;
+        this.time = time;
     }
 
     public int getId() {
@@ -49,5 +52,13 @@ public class ReminderModel {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public String getTime() {
+        return time;
     }
 }
