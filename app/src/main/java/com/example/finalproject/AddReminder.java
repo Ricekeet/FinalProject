@@ -6,7 +6,6 @@ import android.app.AlarmManager;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -14,12 +13,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
 
 public class AddReminder extends AppCompatActivity {
 
@@ -43,6 +36,10 @@ public class AddReminder extends AppCompatActivity {
         etTime = findViewById(R.id.etTime);
     }
 
+    /**
+     * Button handler for the buttons on the Activity
+     * @param view The button that is being clicked on
+     */
     public void btnHandler(View view) {
         if (view.getId() == R.id.btnAddReminderBack){
             startActivity(new Intent(this, Reminders.class));
@@ -74,6 +71,9 @@ public class AddReminder extends AppCompatActivity {
 
     }
 
+    /**
+     * Creates a notification channel for the reminder notification
+     */
     private void createNotificationChannel(){
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
