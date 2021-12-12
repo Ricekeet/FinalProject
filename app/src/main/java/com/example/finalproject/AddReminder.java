@@ -21,7 +21,7 @@ public class AddReminder extends AppCompatActivity {
     EditText etDescription;
     EditText etDate;
     EditText etTime;
-
+    DatabaseHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +29,7 @@ public class AddReminder extends AppCompatActivity {
         setContentView(R.layout.activity_addreminder);
         createNotificationChannel();
 
+        dbHelper = new DatabaseHelper(AddReminder.this);
         btnSaveReminder = findViewById(R.id.btnSaveReminder);
         etReminderName = findViewById(R.id.etReminderName);
         etDescription = findViewById(R.id.etDescription);
@@ -46,7 +47,17 @@ public class AddReminder extends AppCompatActivity {
         }
         else if (view.getId() == R.id.btnSaveReminder){
             //TODO: Function to save the reminder to the Database
+            String reminderNameStr = etReminderName.getText().toString();
+            String reminderDescStr = etDescription.getText().toString();
+            String reminderDateStr = etDate.getText().toString();
+            // validating if the required fields are empty or not.
+            /*if (reminderNameStr.isEmpty()) {
+                Toast.makeText(getApplicationContext(), "Please enter Name", Toast.LENGTH_SHORT).show();
+                return;
+            }*/
 
+            ReminderModel reminder = new ReminderModel(reminderNameStr, reminderDescStr, reminderDateStr);
+            dbHelper.addRecord(reminder);
 
             // Notification Starts
             Toast.makeText(this, "Reminder Set!", Toast.LENGTH_SHORT).show();
