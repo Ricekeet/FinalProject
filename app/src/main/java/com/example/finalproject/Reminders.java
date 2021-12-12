@@ -30,7 +30,7 @@ public class Reminders extends AppCompatActivity {
         DatabaseHelper dbHelper = new DatabaseHelper(Reminders.this);
 
         List<ReminderModel> records = dbHelper.viewRecords();
-        CustomAdapter adapter = new CustomAdapter(this, R.layout.reminder_list_row, records);
+        CustomAdapter adapter = new CustomAdapter(this, R.layout.reminder_cell, records);
         listView.setAdapter(adapter);
 
     }
