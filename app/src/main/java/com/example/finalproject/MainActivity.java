@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
             }
             case(R.id.btnWidgets):{
                 //TODO: Should we keep or not?
+                startActivity(new Intent(this, Webview.class));
                 break;
             }
         }
