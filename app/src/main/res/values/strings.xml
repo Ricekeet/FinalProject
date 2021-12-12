@@ -3,7 +3,7 @@
     <string name="about">About</string>
     <string name="reminders">Reminders</string>
     <string name="settings">Settings</string>
-    <string name="widgets">Widgets</string>
+    <string name="widgets">WebView</string>
     <string name="main_menu_logo">Main Menu Logo</string>
     <string name="lblSettingsHeader">Settings</string>
     <string name="lblPushNotifications">Push Notifications</string>

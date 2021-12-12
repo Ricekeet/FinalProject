@@ -19,7 +19,6 @@ public class Webview extends AppCompatActivity {
         WebView myWebView = (WebView) findViewById(R.id.webView);
 
         final ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar);
-        //myWebView.loadUrl("https://www.conestogac.on.ca/");
         // enable JavaScript for the web view
         myWebView.getSettings().setJavaScriptEnabled(true);
 
@@ -44,6 +43,6 @@ public class Webview extends AppCompatActivity {
         });
 
         // load the content from the specified URL into the web view
-        myWebView.loadUrl("https://www.conestogac.on.ca/");
+        myWebView.loadUrl("https://www.conestogac.on.ca/admissions/registrar-office/academic-dates");
     }
 }
