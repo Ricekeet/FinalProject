@@ -6,6 +6,9 @@ import androidx.appcompat.app.AppCompatDelegate;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ListView;
+
+import java.util.List;
 
 public class Reminders extends AppCompatActivity {
 
@@ -23,6 +26,13 @@ public class Reminders extends AppCompatActivity {
         setContentView(R.layout.activity_reminders);
 
         //TODO: Need to fill the listReminders view from SQL Database
+        ListView listView = (ListView) findViewById(R.id.listReminders);
+        DatabaseHelper dbHelper = new DatabaseHelper(Reminders.this);
+
+        List<ReminderModel> records = dbHelper.viewRecords();
+        CustomAdapter adapter = new CustomAdapter(this, R.layout.reminder_list_row, records);
+        listView.setAdapter(adapter);
+
     }
     /**
      * Button Handler for the buttons to go back a view and to add a Reminder
