@@ -27,6 +27,7 @@ import java.util.Locale;
 public class AddReminder extends AppCompatActivity {
 
     Button btnSaveReminder;
+    Button btnDeleteReminder;
     EditText etReminderName;
     EditText etDescription;
     EditText etDate;
@@ -42,12 +43,14 @@ public class AddReminder extends AppCompatActivity {
 
         dbHelper = new DatabaseHelper(AddReminder.this);
         btnSaveReminder = findViewById(R.id.btnSaveReminder);
+        btnDeleteReminder = findViewById(R.id.btnDeleteReminder);
         etReminderName = findViewById(R.id.etReminderName);
         etDescription = findViewById(R.id.etDescription);
         etDate = findViewById(R.id.etDate);
         etTime = findViewById(R.id.etTime);
         Intent intent = getIntent();
         Bundle playerBundle = intent.getExtras();
+        btnDeleteReminder.setVisibility(View.GONE);
         if(playerBundle!=null)
         {
             editID = (int) playerBundle.get("ID");
@@ -56,6 +59,7 @@ public class AddReminder extends AppCompatActivity {
             etDate.setText(playerBundle.get("date").toString());
             etTime.setText(playerBundle.get("time").toString());
             isEdit = true;
+            btnDeleteReminder.setVisibility(View.VISIBLE);
         }
     }
 
@@ -114,9 +118,12 @@ public class AddReminder extends AppCompatActivity {
             alarmManager.set(AlarmManager.RTC_WAKEUP,
                     timeAtButtonClick + reminderTimeInMillis,
                     pendingIntent);
-
+        }else if(view.getId() == R.id.btnDeleteReminder){
+            dbHelper.deleteReminder(editID);
+            Toast.makeText(getApplicationContext(), "Reminder Deleted",
+                    Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this,Reminders.class));
         }
-
     }
 
 
