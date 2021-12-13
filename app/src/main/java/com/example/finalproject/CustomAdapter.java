@@ -23,6 +23,7 @@ public class CustomAdapter  extends ArrayAdapter<ReminderModel> {
         custom_resource = resource;
     }
 
+    // Get Item to display on adapter
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         int id = getItem(i).getId();
@@ -30,15 +31,9 @@ public class CustomAdapter  extends ArrayAdapter<ReminderModel> {
         String desc = getItem(i).getDescription();
         String date = getItem(i).getDate();
         String time = getItem(i).getTime();
-//        int test = getItem(i).getTime();
 
         LayoutInflater inflater = LayoutInflater.from(custom_context);
         view = inflater.inflate(custom_resource, viewGroup, false);
-
-        /*TextView rid = view.findViewById(R.id.txtID);
-        TextView rName = view.findViewById(R.id.txtName);
-        TextView rDesc = view.findViewById(R.id.txtDesc);
-        TextView rDate = view.findViewById(R.id.txtDate);*/
 
         TextView rName = view.findViewById(R.id.lblReminderName);
         TextView rDate = view.findViewById(R.id.lblDateSet);
@@ -74,8 +69,6 @@ public class CustomAdapter  extends ArrayAdapter<ReminderModel> {
 
         String timeLeft = diffDays + ":" + diffHours + ":" + diffMinutes + ":" +
                 diffSeconds + " left";
-
-        //rid.setText(Integer.toString(id));
 
         if(diffSeconds<0){
             rName.setText(name);

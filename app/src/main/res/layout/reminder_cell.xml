@@ -8,7 +8,7 @@
     android:layout_marginTop="5dp"
     android:layout_centerHorizontal="true"
     app:cardBackgroundColor="@color/pinkLight"
-    android:clickable="true"
+    android:clickable="false"
     android:foreground="?android:attr/selectableItemBackground"
     >
 
