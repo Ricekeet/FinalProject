@@ -99,6 +99,13 @@ public class AddReminder extends AppCompatActivity {
 
     }
 
+
+    /**
+     * @param date String of date
+     * @param time String of time
+     * @return milliseconds value
+     * This function converts scheduled date time to milliseconds difference from the current time
+     */
     private long convertToMilliseconds(String date, String time){
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
@@ -124,12 +131,7 @@ public class AddReminder extends AppCompatActivity {
 
         long diff = objDateTime.getTime() - currentDate.getTime();
 
-        long diffSeconds = diff / 1000 % 60;
-        long diffMinutes = diff / (60 * 1000) % 60;
-        long diffHours = diff / (60 * 60 * 1000) % 24;
-        long diffDays = diff / (24 * 60 * 60 * 1000);
-
-        return diffSeconds + diffMinutes + diffHours + diffDays;
+        return diff;
     }
 
 

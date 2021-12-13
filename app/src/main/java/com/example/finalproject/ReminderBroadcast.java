@@ -11,6 +11,10 @@ import androidx.core.app.NotificationManagerCompat;
 public class ReminderBroadcast extends BroadcastReceiver {
 
 
+    /**
+     * BroadcastReceiver runs service in the background
+     * sends the notification with passed parameters on scheduled time
+     */
     @Override
     public void onReceive(Context context, Intent intent) {
         String title = intent.getStringExtra("title");
