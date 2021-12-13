@@ -79,4 +79,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cursor.close();
         return viewList;
     }
+
+
+    // Update a Player Name
+    public void updateReminder(ReminderModel reminderModel) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put(COLUMN_NAME, reminderModel.getName());
+        values.put(COLUMN_DESCRIPTION, reminderModel.getDescription());
+        values.put(COLUMN_DATE, reminderModel.getDate());
+        values.put(COLUMN_TIME, reminderModel.getTime());
+
+        String where = COLUMN_ID +"= ?";
+        String[] whereArgs = {String.valueOf(reminderModel.getId())};
+
+        db.update(REMINDER_TABLE, values,where,whereArgs);
+        db.close();
+    }
 }

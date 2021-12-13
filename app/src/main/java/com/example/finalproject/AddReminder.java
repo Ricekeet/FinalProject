@@ -32,7 +32,8 @@ public class AddReminder extends AppCompatActivity {
     EditText etDate;
     EditText etTime;
     DatabaseHelper dbHelper;
-
+    Boolean isEdit = false;
+    int editID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +46,17 @@ public class AddReminder extends AppCompatActivity {
         etDescription = findViewById(R.id.etDescription);
         etDate = findViewById(R.id.etDate);
         etTime = findViewById(R.id.etTime);
+        Intent intent = getIntent();
+        Bundle playerBundle = intent.getExtras();
+        if(playerBundle!=null)
+        {
+            editID = (int) playerBundle.get("ID");
+            etReminderName.setText(playerBundle.get("name").toString());
+            etDescription.setText(playerBundle.get("desc").toString());
+            etDate.setText(playerBundle.get("date").toString());
+            etTime.setText(playerBundle.get("time").toString());
+            isEdit = true;
+        }
     }
 
     /**
@@ -62,15 +74,23 @@ public class AddReminder extends AppCompatActivity {
             String reminderDateStr = etDate.getText().toString();
             String reminderTimeStr = etTime.getText().toString();
             // validating if the required fields are empty or not.
-            /*if (reminderNameStr.isEmpty()) {
+            if (reminderNameStr.isEmpty()) {
                 Toast.makeText(getApplicationContext(), "Please enter Name",
                 Toast.LENGTH_SHORT).show();
                 return;
-            }*/
+            }
 
             ReminderModel reminder = new ReminderModel(reminderNameStr, reminderDescStr,
                     reminderDateStr, reminderTimeStr);
-            dbHelper.addRecord(reminder);
+            if(isEdit){
+                reminder = new ReminderModel(editID, reminderNameStr, reminderDescStr,
+                        reminderDateStr, reminderTimeStr);
+                dbHelper.updateReminder(reminder);
+            }
+            else{
+                dbHelper.addRecord(reminder);
+            }
+
 
             // Notification Starts
             Toast.makeText(this, "Reminder Set!", Toast.LENGTH_SHORT).show();

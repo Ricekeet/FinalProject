@@ -6,12 +6,12 @@ import androidx.appcompat.app.AppCompatDelegate;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.List;
 
 public class Reminders extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // toggles Night Mode for application
@@ -25,14 +25,27 @@ public class Reminders extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reminders);
 
-        //TODO: Need to fill the listReminders view from SQL Database
-        ListView listView = (ListView) findViewById(R.id.listReminders);
+        ListView reminderList = (ListView) findViewById(R.id.listReminders);
         DatabaseHelper dbHelper = new DatabaseHelper(Reminders.this);
 
         List<ReminderModel> records = dbHelper.viewRecords();
         CustomAdapter adapter = new CustomAdapter(this, R.layout.reminder_cell, records);
-        listView.setAdapter(adapter);
+        reminderList.setAdapter(adapter);
 
+        reminderList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                ReminderModel reminderModel = (ReminderModel) adapterView.getItemAtPosition(i);
+                Intent intent = new Intent(Reminders.this, AddReminder.class);
+                intent.putExtra("editFlag", true);
+                intent.putExtra("ID", reminderModel.getId());
+                intent.putExtra("name", reminderModel.getName());
+                intent.putExtra("desc",reminderModel.getDescription());
+                intent.putExtra("date",reminderModel.getDate());
+                intent.putExtra("time",reminderModel.getTime());
+                startActivity(intent);
+            }
+        });
     }
     /**
      * Button Handler for the buttons to go back a view and to add a Reminder
