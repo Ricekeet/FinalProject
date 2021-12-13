@@ -40,6 +40,8 @@ public class CustomAdapter  extends ArrayAdapter<ReminderModel> {
         TextView rTime = view.findViewById(R.id.lblTimeLeft);
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
+        date = date.replaceAll("[/]","");
+        time = time.replaceAll("[:]","");
         Date objDate = null;
         try {
             objDate = dateFormat.parse(date);

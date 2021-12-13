@@ -81,10 +81,44 @@ public class AddReminder extends AppCompatActivity {
             String reminderDescStr = etDescription.getText().toString();
             String reminderDateStr = etDate.getText().toString();
             String reminderTimeStr = etTime.getText().toString();
+
             // validating if the required fields are empty or not.
             if (reminderNameStr.isEmpty()) {
                 Toast.makeText(getApplicationContext(), "Please enter Name",
                 Toast.LENGTH_SHORT).show();
+                return;
+            }
+            if (reminderDateStr.isEmpty()) {
+                Toast.makeText(getApplicationContext(), "Please enter Date",
+                        Toast.LENGTH_SHORT).show();
+                return;
+            }
+            if (reminderTimeStr.isEmpty()) {
+                Toast.makeText(getApplicationContext(), "Please enter Time",
+                        Toast.LENGTH_SHORT).show();
+                return;
+            }
+            //validate Date and Time format
+            SimpleDateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
+            SimpleDateFormat timeFormat = new SimpleDateFormat("hhmmss");
+            reminderDateStr = reminderDateStr.replaceAll("[/]","");
+            reminderTimeStr = reminderTimeStr.replaceAll("[:]","");
+            Date objDate = null;
+            try {
+                objDate = dateFormat.parse(reminderDateStr);
+            } catch (ParseException e) {
+                e.printStackTrace();
+                Toast.makeText(getApplicationContext(), "Please enter Date with proper format",
+                        Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            try {
+                objDate = timeFormat.parse(reminderTimeStr);
+            } catch (ParseException e) {
+                e.printStackTrace();
+                Toast.makeText(getApplicationContext(), "Please enter Time with proper format",
+                        Toast.LENGTH_SHORT).show();
                 return;
             }
 
