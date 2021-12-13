@@ -76,11 +76,11 @@ public class AddReminder extends AppCompatActivity {
             startActivity(new Intent(this, Reminders.class));
         }
         else if (view.getId() == R.id.btnSaveReminder){
-            //TODO: Function to save the reminder to the Database
             String reminderNameStr = etReminderName.getText().toString();
             String reminderDescStr = etDescription.getText().toString();
             String reminderDateStr = etDate.getText().toString();
             String reminderTimeStr = etTime.getText().toString();
+
             // validating if the required fields are empty or not.
             if (reminderNameStr.isEmpty()) {
                 Toast.makeText(getApplicationContext(), "Please enter Name",
@@ -99,7 +99,6 @@ public class AddReminder extends AppCompatActivity {
                 dbHelper.addRecord(reminder);
             }
 
-
             // Notification Starts
             Toast.makeText(this, "Reminder Set!", Toast.LENGTH_SHORT).show();
 
@@ -114,12 +113,10 @@ public class AddReminder extends AppCompatActivity {
             AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
 
             long timeAtButtonClick = System.currentTimeMillis();
-            long tenSecondsInMillis = 1000 * 10;
 
-            long reminderTimeInMillis  = convertToMilliseconds(etDate.getText().toString(),
-                    etTime.getText().toString());
+            long reminderTimeInMillis  = convertToMilliseconds(etDate.getText().toString(), etTime.getText().toString());
 
-            // send a notification in 10 seconds
+            // send a notification in given time
             alarmManager.set(AlarmManager.RTC_WAKEUP,
                     timeAtButtonClick + reminderTimeInMillis,
                     pendingIntent);
@@ -129,6 +126,9 @@ public class AddReminder extends AppCompatActivity {
                     Toast.LENGTH_SHORT).show();
             startActivity(new Intent(this,Reminders.class));
         }
+
+        // Returns to reminders list
+        startActivity(new Intent(this, Reminders.class));
     }
 
 
