@@ -25,6 +25,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 null, 1);
     }
 
+    //Create Reminder table
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         String createPlayerTable = "CREATE TABLE " + REMINDER_TABLE + " (" + COLUMN_ID +
@@ -95,6 +96,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] whereArgs = {String.valueOf(reminderModel.getId())};
 
         db.update(REMINDER_TABLE, values,where,whereArgs);
+        db.close();
+    }
+    // Delete a Reminder from Reminder Table
+    public void deleteReminder(int id)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        db.delete(REMINDER_TABLE, "ID=?", new String[]{String.valueOf(id)});
         db.close();
     }
 }
