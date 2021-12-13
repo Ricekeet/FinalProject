@@ -9,10 +9,20 @@ import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
+import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 public class AddReminder extends AppCompatActivity {
 
@@ -66,8 +76,9 @@ public class AddReminder extends AppCompatActivity {
             Toast.makeText(this, "Reminder Set!", Toast.LENGTH_SHORT).show();
 
             Intent intent = new Intent(AddReminder.this, ReminderBroadcast.class);
-            intent.putExtra("title",etReminderName.getText());
-            intent.putExtra("desc",etDescription.getText());
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.putExtra("title",reminderNameStr);
+            intent.putExtra("description",reminderDescStr);
 
             PendingIntent pendingIntent = PendingIntent.getBroadcast(AddReminder.this,
                     0, intent, 0);
@@ -77,14 +88,52 @@ public class AddReminder extends AppCompatActivity {
             long timeAtButtonClick = System.currentTimeMillis();
             long tenSecondsInMillis = 1000 * 10;
 
+            long reminderTimeInMillis  = convertToMilliseconds(etDate.getText().toString(), etTime.getText().toString());
+
             // send a notification in 10 seconds
             alarmManager.set(AlarmManager.RTC_WAKEUP,
-                    timeAtButtonClick + tenSecondsInMillis,
+                    timeAtButtonClick + reminderTimeInMillis,
                     pendingIntent);
 
         }
 
     }
+
+
+    /**
+     * @param date String of date
+     * @param time String of time
+     * @return milliseconds value
+     * This function converts scheduled date time to milliseconds difference from the current time
+     */
+    private long convertToMilliseconds(String date, String time){
+
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
+        Date objDate = null;
+        try {
+            objDate = dateFormat.parse(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        //Expected final date format
+        SimpleDateFormat dateFormat2 = new SimpleDateFormat("MM/dd/yyyy");
+        String finalDate = dateFormat2.format(objDate);
+
+        SimpleDateFormat dateFormat3 = new SimpleDateFormat("MMddyyyy hhmmss");
+        Date objDateTime = null;
+        try {
+            objDateTime = dateFormat3.parse(date + " " + time);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        Date currentDate = Calendar.getInstance().getTime();
+
+        long diff = objDateTime.getTime() - currentDate.getTime();
+
+        return diff;
+    }
+
 
     /**
      * Creates a notification channel for the reminder notification

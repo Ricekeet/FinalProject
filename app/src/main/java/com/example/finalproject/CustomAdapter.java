@@ -76,9 +76,16 @@ public class CustomAdapter  extends ArrayAdapter<ReminderModel> {
                 diffSeconds + " left";
 
         //rid.setText(Integer.toString(id));
-        rName.setText(name);
-        rDate.setText(finalDate);
-        rTime.setText(timeLeft);
+
+        if(diffSeconds<0){
+            rName.setText(name);
+            rDate.setText("");
+            rTime.setText("Done");
+        }else{
+            rName.setText(name);
+            rDate.setText(finalDate);
+            rTime.setText(timeLeft);
+        }
 
         return view;
     }
