@@ -87,6 +87,39 @@ public class AddReminder extends AppCompatActivity {
                 Toast.LENGTH_SHORT).show();
                 return;
             }
+            if (reminderDateStr.isEmpty()) {
+                Toast.makeText(getApplicationContext(), "Please enter Date",
+                        Toast.LENGTH_SHORT).show();
+                return;
+            }
+            if (reminderTimeStr.isEmpty()) {
+                Toast.makeText(getApplicationContext(), "Please enter Time",
+                        Toast.LENGTH_SHORT).show();
+                return;
+            }
+            //validate Date and Time format
+            SimpleDateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
+            SimpleDateFormat timeFormat = new SimpleDateFormat("hhmmss");
+            reminderDateStr = reminderDateStr.replaceAll("[/]","");
+            reminderTimeStr = reminderTimeStr.replaceAll("[:]","");
+            Date objDate = null;
+            try {
+                objDate = dateFormat.parse(reminderDateStr);
+            } catch (ParseException e) {
+                e.printStackTrace();
+                Toast.makeText(getApplicationContext(), "Please enter Date with proper format",
+                        Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            try {
+                objDate = timeFormat.parse(reminderTimeStr);
+            } catch (ParseException e) {
+                e.printStackTrace();
+                Toast.makeText(getApplicationContext(), "Please enter Time with proper format",
+                        Toast.LENGTH_SHORT).show();
+                return;
+            }
 
             ReminderModel reminder = new ReminderModel(reminderNameStr, reminderDescStr,
                     reminderDateStr, reminderTimeStr);
