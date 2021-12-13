@@ -172,21 +172,10 @@ public class AddReminder extends AppCompatActivity {
      * This function converts scheduled date time to milliseconds difference from the current time
      */
     private long convertToMilliseconds(String date, String time){
-
-        SimpleDateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
-        Date objDate = null;
-        try {
-            objDate = dateFormat.parse(date);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-
-        //Expected final date format
-        SimpleDateFormat dateFormat2 = new SimpleDateFormat("MM/dd/yyyy");
-        String finalDate = dateFormat2.format(objDate);
-
         SimpleDateFormat dateFormat3 = new SimpleDateFormat("MMddyyyy hhmmss");
         Date objDateTime = null;
+        date = date.replaceAll("[/]","");
+        time = time.replaceAll("[:]","");
         try {
             objDateTime = dateFormat3.parse(date + " " + time);
         } catch (ParseException e) {
@@ -204,7 +193,6 @@ public class AddReminder extends AppCompatActivity {
      * Creates a notification channel for the reminder notification
      */
     private void createNotificationChannel(){
-
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             CharSequence name = "ReminderChannel";
             String description = "Channel for Reminder";
