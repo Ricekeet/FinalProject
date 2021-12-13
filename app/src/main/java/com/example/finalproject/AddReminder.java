@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.ParseException;
@@ -32,6 +33,7 @@ public class AddReminder extends AppCompatActivity {
     EditText etDescription;
     EditText etDate;
     EditText etTime;
+    TextView lblAddReminderHeader;
     DatabaseHelper dbHelper;
     Boolean isEdit = false;
     int editID;
@@ -48,6 +50,7 @@ public class AddReminder extends AppCompatActivity {
         etDescription = findViewById(R.id.etDescription);
         etDate = findViewById(R.id.etDate);
         etTime = findViewById(R.id.etTime);
+        lblAddReminderHeader = findViewById(R.id.lblAddReminderHeader);
         Intent intent = getIntent();
         Bundle playerBundle = intent.getExtras();
         btnDeleteReminder.setVisibility(View.GONE);
@@ -58,6 +61,7 @@ public class AddReminder extends AppCompatActivity {
             etDescription.setText(playerBundle.get("desc").toString());
             etDate.setText(playerBundle.get("date").toString());
             etTime.setText(playerBundle.get("time").toString());
+            lblAddReminderHeader.setText("Edit");
             isEdit = true;
             btnDeleteReminder.setVisibility(View.VISIBLE);
         }
@@ -112,7 +116,8 @@ public class AddReminder extends AppCompatActivity {
             long timeAtButtonClick = System.currentTimeMillis();
             long tenSecondsInMillis = 1000 * 10;
 
-            long reminderTimeInMillis  = convertToMilliseconds(etDate.getText().toString(), etTime.getText().toString());
+            long reminderTimeInMillis  = convertToMilliseconds(etDate.getText().toString(),
+                    etTime.getText().toString());
 
             // send a notification in 10 seconds
             alarmManager.set(AlarmManager.RTC_WAKEUP,
